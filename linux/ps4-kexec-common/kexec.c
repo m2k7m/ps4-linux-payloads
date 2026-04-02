@@ -81,7 +81,7 @@ static const char* kexec_get_sb_name(u8 id)
         case SB_AEOLIA:  return "Aeolia";
         case SB_BELIZE:  return "Belize";
         case SB_BAIKAL:  return "Baikal";
-        case SB_BELIZE2: return "Belize2"; // Now correctly identified
+        case SB_BELIZE2: return "Belize2";
         default:         return "Unknown Southbridge";
     }
 }
@@ -100,10 +100,6 @@ static void kexec_print_banner(u16 fw_ver, u16 vram_mb, u8 sb_id)
     }
     kern.printf("VRAM %u MB\n", (unsigned int)vram_mb);
     kern.printf("Southbridge: %s\n", kexec_get_sb_name(sb_id));
-    kern.printf("Current sb_id: %u\n", (unsigned int)sb_id);
-    kern.printf("\n");
-    kern.printf("SB_BAIKAL constant: %u\n", (unsigned int)SB_BAIKAL);
-
     kern.printf("========================================\n");
 }
 
